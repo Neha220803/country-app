@@ -7,7 +7,6 @@ function PieChart({ data }) {
         <h4>Languages Spoken:</h4>
         <Pie data={data} />
     </div>
-
 }
 
 export default PieChart;

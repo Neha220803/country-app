@@ -5,9 +5,7 @@ import axios from 'axios';
 import PieChart from './components/PieChart';
 import Info from './components/Info';
 import Gauge from './components/Gauge.js';
-import MapTile from './components/maptile.png';
 import MarkerMap from './components/MarkerMap.js';
-
 
 function App() {
   const [countryName, setCountryName] = useState('');
@@ -34,6 +32,16 @@ function App() {
         datasets: [{
           label: 'Languages Spoken',
           data: data,
+          backgroundColor: [
+            "rgba(75,192,192,1)",
+            "#f3ba2f",
+            "#50AF95",
+            "#2a71d0",
+            "#ecf0f1",
+          ],
+          borderColor: "black",
+          borderWidth: 2,
+
         }]
       });
 
@@ -87,18 +95,16 @@ function App() {
         showComponents && lastSavedCountry && (
           <div>
             <Container>
-              <Row className='my-3 justify-content-center align-items-center'>
-
-                <Col lg={5} md={12} sm={12} className='d-flex px-5 mx-4 justify-content-between align-items-center box'>
-
+              <Row className='justify-content-center align-items-center'>
+                <Col lg={5} md={12} sm={12} className='d-flex px-5 m-3 justify-content-between align-items-center box'>
                   <Info {...lastSavedCountry} />
                 </Col>
                 <Col lg={5} md={12} sm={12} className='d-flex justify-content-center align-items-center box'>
                   <Gauge level={lastSavedCountry.populationCategory} />
                 </Col>
               </Row>
-              <Row className='my-3 justify-content-center align-items-center' >
-                <Col lg={5} md={12} sm={12} className='d-flex mx-4 justify-content-center align-items-center box'>
+              <Row className='justify-content-center align-items-center' >
+                <Col lg={5} md={12} sm={12} className='m-3 d-flex justify-content-center align-items-center box'>
                   {pieChartData && <PieChart data={pieChartData} />}
                 </Col>
                 <Col lg={5} md={12} sm={12} className='d-flex justify-content-center align-items-center box'>
