@@ -15,7 +15,6 @@ function App() {
   const [pieChartData, setPieChartData] = useState(null);
 
   useEffect(() => {
-    // Fetch the last saved country information when the component mounts
     getLastSavedCountry();
   }, []);
 
@@ -44,7 +43,6 @@ function App() {
 
         }]
       });
-
       setLoading(false);
     }
     catch (error) {
